@@ -60,3 +60,15 @@ class LinkedList:
                 current = current.next
             # Set the next node of the current node to the next node of the next node
             current.next = current.next.next
+
+
+if __name__ == "__main__":
+    linked_list = LinkedList()
+    linked_list.append(1)
+    linked_list.append(2)
+    linked_list.append(3)
+    linked_list.print_list()
+    linked_list.insert(4, 1)
+    linked_list.print_list()
+    linked_list.delete(1)
+    linked_list.print_list()
