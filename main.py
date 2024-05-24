@@ -21,3 +21,26 @@ class LinkedList:
             # Create a new node and set it as the next node of the last node
             current.next = Node(data)
         
+
+        def print_list(self):
+            current = self.head
+            # singly linked lists start with the head node
+            while current:
+                print(current.data)
+                current = current.next
+
+
+        def insert(self, data, index):
+            # If the index is 0, insert the new node at the head
+            if index == 0:
+                self.head = Node(data, self.head)
+                return
+
+            current = self.head
+            # Traverse to the node before the index
+            for i in range(index - 1):
+                if not current:
+                    raise IndexError("Index out of range")
+                current = current.next
+            # Create a new node and set it as the next node of the current node
+            current.next = Node(data, current.next)
