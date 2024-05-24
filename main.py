@@ -44,3 +44,19 @@ class LinkedList:
                 current = current.next
             # Create a new node and set it as the next node of the current node
             current.next = Node(data, current.next)
+
+
+        def delete(self, index):
+            # If the index is 0, delete the head node
+            if index == 0:
+                self.head = self.head.next
+                return
+
+            current = self.head
+            # Traverse to the node before the index
+            for i in range(index - 1):
+                if not current:
+                    raise IndexError("Index out of range")
+                current = current.next
+            # Set the next node of the current node to the next node of the next node
+            current.next = current.next.next
